@@ -7,7 +7,7 @@ import (
 	"os/exec"
 	"strings"
 
-	"github.com/shirou/gopsutil/internal/common"
+	"github.com/shellvish/gopsutil/internal/common"
 )
 
 func Avg() (*AvgStat, error) {

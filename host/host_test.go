@@ -6,7 +6,7 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/shirou/gopsutil/internal/common"
+	"github.com/shellvish/gopsutil/internal/common"
 )
 
 func skipIfNotImplementedErr(t *testing.T, err error) {

@@ -11,7 +11,7 @@ import (
 	"strings"
 	"testing"
   
-	"github.com/shirou/gopsutil/v3/internal/common"
+	"github.com/shellvish/gopsutil/v3/internal/common"
 	"github.com/stretchr/testify/assert"
 )
 
