@@ -1,3 +1,4 @@
+//go:build linux
 // +build linux
 
 package cpu
@@ -236,7 +237,7 @@ func InfoWithContext(ctx context.Context) ([]InfoStat, error) {
 func parseStatLine(line string) (*TimesStat, error) {
 	fields := strings.Fields(line)
 
-	if len(fields) == 0 {
+	if len(fields) < 8 {
 		return nil, errors.New("stat does not contain cpu info")
 	}
 
@@ -321,7 +322,7 @@ func CountsWithContext(ctx context.Context, logical bool) (int, error) {
 		if err == nil {
 			for _, line := range lines {
 				line = strings.ToLower(line)
-				if strings.HasPrefix(line, "processor")  {
+				if strings.HasPrefix(line, "processor") {
 					_, err = strconv.Atoi(strings.TrimSpace(line[strings.IndexByte(line, ':')+1:]))
 					if err == nil {
 						ret++
